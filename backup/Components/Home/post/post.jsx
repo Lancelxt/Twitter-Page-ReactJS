@@ -1,9 +1,12 @@
+// PostForm.jsx
 import React, { useState, useEffect } from 'react';
+import Feed from '../feed/feed';
 import './post.css';
 
-const PostForm = ({ onPostTweet }) => {
+const PostForm = () => {
   const [twitterData, setTwitterData] = useState(null);
   const [tweetText, setTweetText] = useState('');
+  const [tweetedData, setTweetedData] = useState([]); // Change to an array
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,28 +27,36 @@ const PostForm = ({ onPostTweet }) => {
   };
 
   const handlePostTweet = () => {
-    if (tweetText.trim() !== '') {
-      onPostTweet({
-        id: Date.now(),
-        user: {
-          userName: twitterData.loggedInUser.userName,
-          userId: twitterData.loggedInUser.userId,
-          imageData: twitterData.loggedInUser.imageData,
-          blueTick: twitterData.loggedInUser.blueTick,
-        },
-        text: tweetText,
-        tweetTime: Date.now(),
-      });
-      setTweetText('');
-    }
-  };
+    const newTweet = {
+      id: Date.now(),
+      user: {
+        userName: twitterData.loggedInUser.userName,
+        userId: twitterData.loggedInUser.userId,
+        imageData: twitterData.loggedInUser.imageData,
+        blueTick: twitterData.loggedInUser.blueTick,
+      },
+      text: tweetText,
+      tweetTime: Date.now(),
+    };
+
+  // Check if the new tweet already exists in the array
+  const isDuplicate = tweetedData.some((tweet) => tweet.id === newTweet.id);
+
+  if (!isDuplicate) {
+    // Update the state to include the new tweet
+    setTweetedData((prevTweets) => [newTweet, ...prevTweets]);
+  }
+
+  // Clear the input field after posting the tweet
+  setTweetText('');
+};
 
   if (!twitterData) {
     return <div>Loading...</div>;
   }
 
   return (
-    <div className='post-form'>
+    <div className='post-form'> {/* Change the class name to "tweet-container" */}
       <img src={twitterData.loggedInUser.imageData.url} alt={twitterData.loggedInUser.imageData.alt} />
       <input
         type="text"
@@ -56,8 +67,11 @@ const PostForm = ({ onPostTweet }) => {
       <div className='post-button'>
         <button onClick={handlePostTweet}>Tweet</button>
       </div>
+      {/* Pass the tweetedData to the Feed component */}
+      <Feed tweetedData={tweetedData} onPostTweet={handlePostTweet} />
     </div>
   );
 };
+
 
 export default PostForm;

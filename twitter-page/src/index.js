@@ -5,15 +5,17 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import TwitterTopBar from './Components/Home/Top bar/top-bar';
 import PostForm from './Components/Home/post/post';
-import Feed from './Components/Home/feed/feed';
+import Threads from './Components/Home/thread/thread';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <div>
-    <App />
+  <>
     <TwitterTopBar/>
-    <PostForm/>
-    <Feed/>
-    </div>
+    <App />
+
+    {/* <PostForm /> */}
+    <Threads/>
+    
+    </>
 );
 
 // If you want to start measuring performance in your app, pass a function

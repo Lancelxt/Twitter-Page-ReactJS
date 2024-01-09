@@ -2,12 +2,12 @@ import React from 'react';
 import bluetick from './bluetick.svg';
 import Thread from '../thread/thread';
 
-const Feed = ({ tweetedData }) => {
+const Feed = ({ tweetedData, onPostTweet }) => {
   return (
-    <div>
+    <>
       {tweetedData && tweetedData.length > 0 ? (
         tweetedData.map((tweet) => (
-          <div key={tweet.id} className="tweet-container">
+          <div key={tweet.id} className="tweets new">
             <div className="tweet-user-info">
               <img src={tweet.user.imageData.url} alt={tweet.user.imageData.alt} />
               <div>
@@ -22,9 +22,9 @@ const Feed = ({ tweetedData }) => {
           </div>
         ))
       ) : (
-        <Thread/>
+        <Thread />
       )}
-    </div>
+    </>
   );
 };
 

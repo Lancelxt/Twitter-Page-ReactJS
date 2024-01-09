@@ -13,29 +13,26 @@
     flex-direction: row;
     border-bottom: 1px solid var(--secondary-charcoal);
     color: var(--primary-white);
-    /* border: 2px solid white; */
+    border: 2px solid white;
 }
 
 .tweet{
     display: flex;
     flex-direction: column;
-    padding-left: 9px;
-    
 }
 .tweets .pfp-container{
     width: 45px;
 height: 45px;
 flex-shrink: 0;
-/* padding-right: 8px; */
+padding-right: 8px;
 padding-left: 12px;
 }
 
 .intro-container{
     display: inline-flex;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     align-items: center;
     gap: 4px;
-    margin-bottom: -16px;
 }
 
 .intro-container .name{
@@ -92,21 +89,19 @@ letter-spacing: -0.3px;
 
 
 .tweet-content{
-    /* margin-top: -1px; */
 }
 
 .action-button-container{
     display: inline-flex;
     gap: 32px;
     padding-left: 4px;
-    margin-top: -12px;
 }
 
 .action-button-container .replies-button{
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 2px;
+    gap: 0.5px;
 }
 
 .action-button-container .replies-button p{
@@ -131,7 +126,7 @@ letter-spacing: -0.3px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 2px;
+    gap: 0.5px;
 }
 
 .action-button-container .like-button p{
@@ -155,7 +150,7 @@ letter-spacing: -0.3px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 2px;
+    gap: 0.5px;
 }
 
 .action-button-container .retweet-button p{
@@ -180,7 +175,7 @@ letter-spacing: -0.3px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 2px;
+    gap: 0.5px;
 }
 
 .action-button-container .share-button p{
@@ -199,6 +194,3 @@ letter-spacing: -0.3px;
     flex-shrink: 0;
     margin-top: 0;
 }
-
-
-
