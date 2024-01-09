@@ -10,16 +10,18 @@
 
 .tweets{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     border-bottom: 1px solid var(--secondary-charcoal);
     color: var(--primary-white);
+    padding-left: 9px;
+    
     /* border: 2px solid white; */
 }
 
 .tweet{
     display: flex;
     flex-direction: column;
-    padding-left: 9px;
+    padding-left: 24px;
     
 }
 .tweets .pfp-container{
@@ -35,7 +37,7 @@ padding-left: 12px;
     /* justify-content: space-between; */
     align-items: center;
     gap: 4px;
-    margin-bottom: -16px;
+    /* margin-bottom: 0px; */
 }
 
 .intro-container .name{
@@ -88,8 +90,30 @@ line-height: normal;
 letter-spacing: -0.3px;
 }
 
+.tweet-content{
+    margin-top: -28px;
+}
 
+.replying-text{
+    color: #687684;
+/* font-family: SF Pro Text; */
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: -0.3px;
+margin-top: 20px;
+}
 
+.replying-text span{
+    color: #4C9EEB;
+/* font-family: SF Pro Text; */
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: -0.3px;
+}
 
 .tweet-content{
     /* margin-top: -1px; */
@@ -201,4 +225,15 @@ letter-spacing: -0.3px;
 }
 
 
+.replying-container{
+    margin-top: -32px;
+}
 
+.reply-tweet .tweet-content{
+    margin-top: -28px;
+}
+
+
+.main-tweet, .reply-tweet{
+    display: flex;
+}

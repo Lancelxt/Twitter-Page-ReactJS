@@ -2,7 +2,7 @@
 display: flex;
 width: 100vw;
 height: 10vh;
-padding:12px 0px 11px 20px;
+padding:12px 0px 96px 20px;
 border-bottom: 1px solid var(--secondary-charcoal);
 }
 
@@ -43,7 +43,7 @@ flex-shrink: 0;
 border-radius: 36px;
 background-color: var(--secondary-blue);
 color: var(--primary-white);
-margin-top: 52px;
+margin-top: 54px;
 margin-left: 36px;
 border: none;
 

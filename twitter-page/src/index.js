@@ -6,14 +6,20 @@ import reportWebVitals from './reportWebVitals';
 import TwitterTopBar from './Components/Home/Top bar/top-bar';
 import PostForm from './Components/Home/post/post';
 import Threads from './Components/Home/thread/thread';
+import Sidebar from './Components/Sidebar/sidebar';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
+
+  <Sidebar/>
+  <div className='feed-wrapper'>  
+  
     <TwitterTopBar/>
     <App />
 
     {/* <PostForm /> */}
     <Threads/>
+    </div>
     
     </>
 );
