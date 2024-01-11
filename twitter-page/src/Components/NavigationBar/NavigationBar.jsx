@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import './sidebar.css'
-const Sidebar = () => {
+import './NavigationBar.css'
+const NavigationBar = () => {
     const [sideNavigationButtons, setSideNavigationButtons] = useState([]);
 
     useEffect(() => {
@@ -11,7 +11,7 @@ const Sidebar = () => {
     }, []);
 
     return (
-        <div className="sidebar">
+        <div className="navigation-bar">
 
             <ul className='side-list'>
                 {sideNavigationButtons.map((button, index) => (
@@ -31,4 +31,4 @@ const Sidebar = () => {
     );
 };
 
-export default Sidebar;
+export default NavigationBar;

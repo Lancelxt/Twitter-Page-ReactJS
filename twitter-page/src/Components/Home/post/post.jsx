@@ -46,6 +46,7 @@ const PostForm = ({ onPostTweet }) => {
 
   return (
     <div className='post-form'>
+      <div className='form-wrapper'>
       <img src={twitterData.loggedInUser.imageData.url} alt={twitterData.loggedInUser.imageData.alt} />
       <input
         type="text"
@@ -53,8 +54,11 @@ const PostForm = ({ onPostTweet }) => {
         value={tweetText}
         onChange={handleTweetChange}
       />
+      </div>
+      <div className='button'>
       <div className='post-button'>
         <button onClick={handlePostTweet}>Tweet</button>
+      </div>
       </div>
     </div>
   );

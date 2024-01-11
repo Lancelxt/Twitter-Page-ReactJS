@@ -1,11 +1,15 @@
 .post-form{
 display: flex;
-width: 100vw;
+/* width: 100vw; */
 height: 10vh;
 padding:12px 0px 96px 20px;
 border-bottom: 1px solid var(--secondary-charcoal);
 }
 
+.form-wrapper{
+    display: flex;
+    flex-direction: row;
+}
 
 img{
     width: 45px;
@@ -16,17 +20,24 @@ img{
 }
 
 .post-form input{
-    width: 159px;
+    width: 320px;
     height: 21px;
     background: none;
     margin:21px 0px 0px 8px;
     border: none;
     color: #757575;
-    text-align: center;
+    /* text-align: center; */
     justify-content: center;
+    color: #6E767D;
+font-size: 20px;
+font-weight: 400;
     
 }
 
+.post-form input:focus {
+    color: white;
+    outline: none;
+}
 
 
 
@@ -54,3 +65,10 @@ border: none;
 /* .post-form .tweet-container{
     display: none;
 } */
+
+
+@media only screen and (max-width: 767px){
+    .post-form{
+        width: 100vw;
+    }
+}

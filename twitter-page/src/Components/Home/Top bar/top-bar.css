@@ -1,13 +1,13 @@
 .top-bar{
     /* height: 88px; */
-    width: 100vw;
+    /* width: 100vw; */
     border-bottom: 1px solid var(--secondary-charcoal);
 }
 
 .home-text{
     color: var(--primary-white);
-text-align: center;
-font-family: SF Pro Text;
+/* text-align: center; */
+/* font-family: SF Pro Text; */
 font-size: 18px;
 font-style: normal;
 font-weight: 700;
@@ -38,7 +38,7 @@ justify-content: space-between;
 
     color: var(--primary-white);
 text-align: center;
-font-family: SF Pro Text;
+/* font-family: SF Pro Text; */
 font-size: 14px;
 font-style: normal;
 font-weight: 700;
@@ -47,3 +47,12 @@ letter-spacing: -0.3px;
 }
 
 
+@media only screen and (max-width: 767px){
+    .top-bar{
+        width: 100vw;
+    }
+ .top-tabs{
+    width: 100vw;
+ }
+ 
+}

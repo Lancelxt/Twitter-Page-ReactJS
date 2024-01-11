@@ -10,6 +10,7 @@ import "./thread.css";
 
 const Threads = () => {
   const [tweetThreads, setTweetThreads] = useState([]);
+  const [likedThreads, setLikedThreads] = useState([]);
 
   // Function to format numbers
   const formatNumber = (number) => {
@@ -37,6 +38,24 @@ const Threads = () => {
   const addNewTweet = (newTweet) => {
     setTweetThreads((prevTweets) => [newTweet, ...prevTweets]);
   };
+
+  const handleLike = (index) => {
+    setTweetThreads((prevThreads) => {
+      const updatedThreads = [...prevThreads];
+      updatedThreads[index][0].likes = updatedThreads[index][0].likes + (updatedThreads[index][0].liked ? -1 : 1);
+updatedThreads[index][0].liked = !updatedThreads[index][0].liked;
+
+
+      return updatedThreads;
+    });
+  
+    setLikedThreads((prevLikedThreads) => {
+      const updatedLikedThreads = [...prevLikedThreads];
+      updatedLikedThreads[index] = !updatedLikedThreads[index];
+      return updatedLikedThreads;
+    });
+  };
+  
 
   return (
     <div className="tweet-container">
@@ -111,7 +130,7 @@ const Threads = () => {
 
                 <p>{formatNumber(thread[0].reTweets)}</p>
               </div>
-              <div className="like-button">
+              <div className="like-button"  onClick={() => handleLike(index)}>
                 <svg
                   width="15"
                   height="14"
@@ -219,7 +238,7 @@ const Threads = () => {
 
                 <p>{formatNumber(thread[0].reTweets)}</p>
               </div>
-              <div className="like-button">
+              <div className="like-button"  onClick={() => handleLike(index)}>
                 <svg
                   width="15"
                   height="14"

@@ -12,7 +12,7 @@ const App = () => {
   const [tweets, setTweets] = useState([]);
 
   const handlePostTweet = (newTweet) => {
-    setTweets((prevTweets) => [...prevTweets, newTweet]);
+    setTweets((prevTweets) => [newTweet,...prevTweets]);
   };
 
   const [likedTweets, setLikedTweets] = useState([]);
@@ -36,8 +36,6 @@ const App = () => {
       <PostForm onPostTweet={handlePostTweet} />
       <div className="new-tweet-container">
         {tweets
-          .slice(0)
-          .reverse()
           .map((tweet, index) => (
             <div key={index} className="tweets">
               <div className="pfp-container">
