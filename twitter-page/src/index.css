@@ -58,7 +58,8 @@ code {
 
 .feed-wrapper{
   width: 40vw;
-  position: relative;
+
+  left: 700px;
   border: 1px solid #2F3336;
 
 }
@@ -69,6 +70,8 @@ code {
 
 .navigation-bar{
   padding-left: 280px;
+  /* left: 10px; */
+
 }
 
 @media only screen and (max-width: 767px){
@@ -88,6 +91,8 @@ code {
   .sidebar{
     display: none;
   }
+
+  
 }
 
 @media only screen and (max-width: 1366px) and (min-width:767px){
@@ -98,6 +103,7 @@ code {
   .feed-wrapper .tweet-container{
     width: 100vw;
   }
+
 
   
 }

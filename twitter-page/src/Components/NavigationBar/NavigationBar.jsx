@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './NavigationBar.css'
+import Profile from './profile/Profile.jsx';
 const NavigationBar = () => {
     const [sideNavigationButtons, setSideNavigationButtons] = useState([]);
 
@@ -26,6 +27,7 @@ const NavigationBar = () => {
             <div className='post-button'>
         <button>Tweet</button>
       </div>
+      {/* <Profile/> */}
     </div>
       
     );
