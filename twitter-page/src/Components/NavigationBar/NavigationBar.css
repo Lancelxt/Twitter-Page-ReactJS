@@ -1,3 +1,8 @@
+.navigation-bar{
+    /* position: fixed; */
+}
+
+
 .side-list{
     display: flex;
     flex-direction: column;
