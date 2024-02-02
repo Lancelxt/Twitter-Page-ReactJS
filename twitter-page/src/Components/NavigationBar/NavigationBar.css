@@ -42,13 +42,14 @@ color: white;
     .post-button{
         align-items: center;
         justify-content: center;
-        padding-left: 12px;
+        /* padding-left: 12px; */
+       
     }
 
     .post-button button{
         display: flex;
-    width: 74px;
-    height: 34px;
+    width: 180px;
+    height: 38px;
     padding: 9px 16px;
     align-items: center;
     justify-content: center;
@@ -58,7 +59,7 @@ color: white;
     background-color: var(--secondary-blue);
     color: var(--primary-white);
     margin-top: 54px;
-    margin-left: 36px;
+    margin-left: 32px;
     border: none;
     
     
