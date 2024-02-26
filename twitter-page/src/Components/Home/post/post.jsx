@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import Feed from '../feed/feed';
-import './post.css'
+import './post.css';
 
-const PostForm = () => {
+const PostForm = ({ onPostTweet }) => {
   const [twitterData, setTwitterData] = useState(null);
   const [tweetText, setTweetText] = useState('');
-  const [tweetedData, setTweetedData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,25 +24,21 @@ const PostForm = () => {
   };
 
   const handlePostTweet = () => {
-    const newTweet = {
-      id: Date.now(),
-      user: {
-        userName: twitterData.loggedInUser.userName,
-        userId: twitterData.loggedInUser.userId,
-        imageData: twitterData.loggedInUser.imageData,
-        blueTick: twitterData.loggedInUser.blueTick,
-      },
-      text: tweetText,
-      tweetTime: Date.now(),
-    };
-  
-    // Update the state to include the new tweet
-    setTweetedData((prevTweets) => [newTweet, ...prevTweets]);
-  
-    // Clear the input field after posting the tweet
-    setTweetText('');
+    if (tweetText.trim() !== '') {
+      onPostTweet({
+        id: Date.now(),
+        user: {
+          userName: twitterData.loggedInUser.userName,
+          userId: twitterData.loggedInUser.userId,
+          imageData: twitterData.loggedInUser.imageData,
+          blueTick: twitterData.loggedInUser.blueTick,
+        },
+        text: tweetText,
+        tweetTime: Date.now(),
+      });
+      setTweetText('');
+    }
   };
-  
 
   if (!twitterData) {
     return <div>Loading...</div>;
@@ -52,6 +46,7 @@ const PostForm = () => {
 
   return (
     <div className='post-form'>
+      <div className='form-wrapper'>
       <img src={twitterData.loggedInUser.imageData.url} alt={twitterData.loggedInUser.imageData.alt} />
       <input
         type="text"
@@ -59,11 +54,12 @@ const PostForm = () => {
         value={tweetText}
         onChange={handleTweetChange}
       />
-      <div className='post-button'>
-      <button onClick={handlePostTweet}>Tweet</button>
       </div>
-      {/* Pass the tweetedData to the Feed component */}
-      <Feed tweetedData={tweetedData} />
+      <div className='button'>
+      <div className='post-button'>
+        <button onClick={handlePostTweet}>Tweet</button>
+      </div>
+      </div>
     </div>
   );
 };

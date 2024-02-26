@@ -10,29 +10,34 @@
 
 .tweets{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     border-bottom: 1px solid var(--secondary-charcoal);
     color: var(--primary-white);
-    border: 2px solid white;
+    padding-left: 9px;
+    
+    /* border: 2px solid white; */
 }
 
 .tweet{
     display: flex;
     flex-direction: column;
+    padding-left: 24px;
+    
 }
 .tweets .pfp-container{
     width: 45px;
 height: 45px;
 flex-shrink: 0;
-padding-right: 8px;
+/* padding-right: 8px; */
 padding-left: 12px;
 }
 
 .intro-container{
     display: inline-flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
     gap: 4px;
+    /* margin-bottom: 0px; */
 }
 
 .intro-container .name{
@@ -43,6 +48,7 @@ padding-left: 12px;
     font-weight: 700;
     line-height: normal;
     letter-spacing: -0.3px;
+    padding-left: 0;
 }
 
 .intro-container .user-id{
@@ -85,23 +91,47 @@ line-height: normal;
 letter-spacing: -0.3px;
 }
 
+.tweet-content{
+    margin-top: -28px;
+}
 
+.replying-text{
+    color: #687684;
+/* font-family: SF Pro Text; */
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: -0.3px;
+margin-top: 20px;
+}
 
+.replying-text span{
+    color: #4C9EEB;
+/* font-family: SF Pro Text; */
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: -0.3px;
+}
 
 .tweet-content{
+    /* margin-top: -1px; */
 }
 
 .action-button-container{
     display: inline-flex;
     gap: 32px;
     padding-left: 4px;
+    margin-top: -12px;
 }
 
 .action-button-container .replies-button{
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5px;
+    gap: 2px;
 }
 
 .action-button-container .replies-button p{
@@ -116,7 +146,7 @@ letter-spacing: -0.3px;
 
 .action-button-container .replies-button img{
     width: 15px;
-    height: 14.508px;
+    height: 14px;
     flex-shrink: 0;
     margin-top: 0;
 }
@@ -126,9 +156,14 @@ letter-spacing: -0.3px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5px;
+    gap: 2px;
 }
 
+.action-button-container .like-button.liked svg{
+    fill: rgb(249, 24, 128);
+
+    /* display: none; */
+}
 .action-button-container .like-button p{
     color: #72767A;
 /* font-family: SF Pro Text; */
@@ -141,16 +176,22 @@ letter-spacing: -0.3px;
 
 .action-button-container .like-button img{
     width: 15px;
-    height: 14.508px;
+    height: 14px;
     flex-shrink: 0;
     margin-top: 0;
+}
+
+.liked {
+    fill: red;
+    color: red;
+    display: none;
 }
 
 .action-button-container .retweet-button{
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5px;
+    gap: 2px;
 }
 
 .action-button-container .retweet-button p{
@@ -165,7 +206,7 @@ letter-spacing: -0.3px;
 
 .action-button-container .retweet-button img{
     width: 15px;
-    height: 14.508px;
+    height: 14px;
     flex-shrink: 0;
     margin-top: 0;
 }
@@ -175,7 +216,7 @@ letter-spacing: -0.3px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5px;
+    gap: 2px;
 }
 
 .action-button-container .share-button p{
@@ -189,8 +230,30 @@ letter-spacing: -0.3px;
 }
 
 .action-button-container .share-button img{
-    width: 15px;
-    height: 14.508px;
-    flex-shrink: 0;
-    margin-top: 0;
+    width: 15.25px;
+height: 14.802px;
+flex-shrink: 0;
+}
+
+
+.replying-container{
+    margin-top: -32px;
+}
+
+.reply-tweet .tweet-content{
+    margin-top: -28px;
+}
+
+
+.main-tweet, .reply-tweet{
+    display: flex;
+}
+
+@media only screen and (max-width: 1366px) and (min-width:767px){
+    .tweets{
+        width: 39.9vw;
+        
+        
+    }
+
 }

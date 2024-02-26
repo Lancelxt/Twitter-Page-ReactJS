@@ -1,6 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+
+
+@font-face {
+  font-family: Helvetica;
+  src: url(../public/font/Helvetica.otf);
+}
+
+
+/* *{
+
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+*{
+  box-sizing: border-box;
+  
+}
+
 :root{
+
+
+
 /* Reusable code  */
 
 /* colors */
@@ -14,16 +36,74 @@
 
 }
 
+#root{
+  display: flex;
+flex-direction: row;
+gap: 20px;
+}
 
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  /* font-family: 'Roboto', sans-serif; */
+  font-family: Arial, Helvetica, sans-serif;
   background-color: var(--primary-black);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.feed-wrapper{
+  width: 40vw;
+
+  left: 700px;
+  border: 1px solid #2F3336;
+
+}
+
+.side-list{
+  padding: 0;
+}
+
+.navigation-bar{
+  padding-left: 280px;
+  /* left: 10px; */
+
+}
+
+@media only screen and (max-width: 767px){
+  .navigation-bar{
+    display: none;
+  }
+
+    .feed-wrapper{
+      border: none;
+    }
+  .top-bar{
+    width: 100vw;
+  }
+  .tweets{
+    width: 100vw;
+  }
+  .sidebar{
+    display: none;
+  }
+
+  
+}
+
+@media only screen and (max-width: 1366px) and (min-width:767px){
+  .navigation-bar{
+    padding-left:120px;
+  }
+
+  .feed-wrapper .tweet-container{
+    width: 100vw;
+  }
+
+
+  
 }

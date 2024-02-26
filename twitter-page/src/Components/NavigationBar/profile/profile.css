@@ -1,0 +1,43 @@
+.profile{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    position: fixed;
+    bottom: 10px;
+    /* padding-top: 460px; */
+}
+
+
+
+.pfp-container img{
+    width: 40px;
+    height: 40px;
+}
+
+
+.user-info {
+  color: #d9d9d9;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.userid {
+  color: #6e767d;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.dot-icon img{
+    display: flex;
+width: 20px;
+height: 20px;
+padding: 0px 2.5px;
+justify-content: center;
+align-items: center;
+flex-shrink: 0;
+}
